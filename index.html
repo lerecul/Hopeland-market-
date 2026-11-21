@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171717"><meta name="description" content="Hopeland Market — La mode, notre passion !">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css">
+<title>Hopeland Market</title>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brandmark">H</span><span>HOPELAND <b>MARKET</b><small>La mode, notre passion !</small></span></a>
+  <nav><a href="#catalogue">Boutique</a><a href="#about">À propos</a><button id="adminOpen" class="outline">Administration</button></nav>
+</header>
+<section class="hero">
+  <div class="hero-copy"><p class="eyebrow">STYLE • QUALITÉ • ÉLÉGANCE</p><h1>Votre style,<br><em>notre passion.</em></h1><p>Découvrez notre sélection et commandez simplement sur WhatsApp.</p><a class="btn yellow" href="#catalogue">Découvrir la boutique</a></div>
+  <div class="hero-art"><div class="hero-circle">HM</div><div class="hero-note">LA MODE<br>À VOTRE PORTÉE</div></div>
+</section>
+<main>
+<section id="catalogue" class="section">
+  <div class="section-head"><div><p class="eyebrow">NOTRE SÉLECTION</p><h2>La boutique</h2></div><input id="search" type="search" placeholder="Rechercher un article…"></div>
+  <div id="categories" class="chips"></div><div id="products" class="product-grid"></div>
+</section>
+<section id="about" class="about"><div><p class="eyebrow">HOPELAND MARKET</p><h2>La mode, notre passion !</h2><p>Une boutique pensée pour vous aider à trouver votre style. Parcourez le catalogue et contactez-nous pour commander.</p></div><a class="btn dark" target="_blank" rel="noopener" href="https://wa.me/2250555923904">Nous contacter</a></section>
+</main>
+<footer>© <span id="year"></span> HOPELAND MARKET · Tous droits réservés</footer>
+<dialog id="adminDialog"><form method="dialog" class="dialog-head"><div><p class="eyebrow">ESPACE PRIVÉ</p><h2>Administration</h2></div><button class="x" aria-label="Fermer">×</button></form>
+<div id="loginPanel" class="panel"><p>Accès de démonstration. Définissez un code administrateur pour cet appareil.</p><label>Code administrateur<input id="adminPin" type="password" inputmode="numeric" placeholder="Créer ou saisir votre code"></label><button id="loginBtn" class="btn yellow full">Entrer</button><small>Prototype local : le code est enregistré dans ce navigateur. Ce mécanisme n'est pas une authentification sécurisée pour une boutique publique.</small></div>
+<div id="dashboard" class="panel hidden">
+<div class="stats"><div><small>Articles</small><strong id="statProducts">0</strong></div><div><small>Commandes enregistrées</small><strong id="statOrders">0</strong></div></div>
+<h3>Ajouter un article</h3><form id="productForm" class="form-grid"><label>Nom<input name="name" required placeholder="Ex. Polo homme"></label><label>Catégorie<select name="category"><option>Vêtements</option><option>Chaussures</option><option>Sacs & accessoires</option><option>Téléphones & gadgets</option><option>Maison</option><option>Cadeaux</option></select></label><label>Prix (FCFA)<input name="price" type="number" min="0" required placeholder="15000"></label><label>Stock<input name="stock" type="number" min="0" value="1"></label><label class="wide">Lien photo (facultatif)<input name="image" type="url" placeholder="https://…"></label><label class="wide">Description<textarea name="description" rows="2"></textarea></label><button class="btn yellow wide">Ajouter au catalogue</button></form>
+<h3>Gérer les articles</h3><div id="adminProducts"></div>
+<div class="admin-actions"><button id="exportBtn" class="btn dark">Exporter les données (JSON)</button><button id="resetBtn" class="outline danger">Réinitialiser la démo</button></div>
+</div></dialog>
+<script src="app.js"></script>
+</body></html>
